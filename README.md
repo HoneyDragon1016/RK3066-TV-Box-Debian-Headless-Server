@@ -12,12 +12,12 @@
 <p align="center">
   <figure align="center">
     <img src="images/box_unboxing.jpg" width="60%" alt="電視盒外觀與遙控器" />
-    <figcaption>圖一：WOBO 電視盒外觀與專屬遙控器</figcaption>
+    <figcaption>WOBO 電視盒外觀與專屬遙控器</figcaption>
   </figure>
   <br />
   <figure align="center">
     <img src="images/box_pcb.jpg" width="60%" alt="電視盒主板拆解" />
-    <figcaption>圖二：電視盒內部 PCB 主板拆解與元件布局（2013-04-17 版本）</figcaption>
+    <figcaption>電視盒內部 PCB 主板拆解與元件布局（2013-04-17 版本）</figcaption>
   </figure>
 </p>
 

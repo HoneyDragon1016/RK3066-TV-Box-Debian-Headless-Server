@@ -4,6 +4,32 @@
 
 ---
 
+## 📸 改裝成果與硬體外觀
+
+### 1. 實體外觀與硬體拆解
+本改裝基於主流的 RK3066 機型（外觀與內部 PCB 電路板配置如下）：
+
+<p align="center">
+  <img src="images/box_unboxing.jpg" width="45%" alt="電視盒外觀與遙控器" />
+  <img src="images/box_pcb.jpg" width="45%" alt="電視盒主板拆解" />
+</p>
+
+### 2. 原始系統規格資訊
+原廠系統為極舊的 Android 4.2.2 版本，內核為 Linux 3.0.36+，硬體配置為 **RK3066 雙核 Cortex-A9 1.6Ghz CPU / 1GB RAM / 4GB Flash**：
+
+<p align="center">
+  <img src="images/system_spec.jpg" width="50%" alt="Android 系統關於頁面" />
+</p>
+
+### 3. 最終無頭伺服器（Headless）運作型態
+拔除所有 HDMI 螢幕輸出，改為直插 RJ45 網路線與電源，實現 0% 額外圖形效能浪費的冷酷伺服器狀態：
+
+<p align="center">
+  <img src="images/headless_server.jpg" width="40%" alt="最終無頭伺服器運作狀態" />
+</p>
+
+---
+
 ## 🛠️ RK3066 刷機與改裝工具大補帖
 
 在進行軟體修改前，需準備好以下傳統 Rockchip 開發工具鏈（建議在 Windows 7 或 Windows 10/11 相容模式下執行）：
@@ -13,16 +39,11 @@
 3. **Android SDK Platform-Tools (ADB 工具)**：用於在 Android 表層系統未崩潰前，進行遠端偵錯、權限提權與檔案傳輸。
 4. **Busybox 靜態編譯版 (ARMv7 構架)**：由於 Android 內建的 Toolbox 指令極度閹割，必須將 `busybox` 推入 `/data/local/tmp/` 以提供完整的 `mount`、`sed`、`dos2unix` 等 Linux 核心指令支援。
 
----
+### 核心鏡像與引導腳本部署結構
 
-## 📸 核心截圖與日誌參考清單（建議準備）
-
-*讀者在實作時，建議自行擷取並對照以下狀態畫面：*
-
-* **設備管理員狀態**：確認安裝驅動後，裝置成功顯示為 `Rockchip USB Device`。
-* **ADB 連結清單**：執行 `adb devices` 正確識別出設備硬體序號。
-* **PM2 守護狀態**：於 Linux 環境執行 `pm2 status`，確認 CPU 負載由 100% 斷崖式降至常態低點，且各項服務顯示為綠燈 `online`。
-* **Cloudflare Tunnel 主機路由**：Zero Trust 後台顯示 `HTTP:80` 與 `SSH://localhost:22` 通道皆處於健康連接狀態。
+<p align="center">
+  <img src="images/file_manager.jpg" width="50%" alt="檔案管理器中的引導鏡像與點火腳本" />
+</p>
 
 ---
 
@@ -134,9 +155,9 @@ pm2 save
 
 ### 步驟四：救磚防範機制（牙籤大法）
 倘若因修改 Android 系統檔案導致引導卡死、網路中斷：
-1.  拔除電源，使用牙籤按住電視盒 `AV 孔` 或 `Reset 孔` 深處的隱藏微動開關。
-2.  按住不放並插上電源，持續 15 秒直至螢幕亮起，強制進入 `Android Recovery 模式`。
-3.  接上 USB 線，即可透過 `adb shell` 重新掛載系統磁區並修正錯誤檔案。
+1. 拔除電源，使用牙籤按住電視盒 `AV 孔` 或 `Reset 孔` 深處的隱藏微動開關。
+2. 按住不放並插上電源，持續 15 秒直至螢幕亮起，強制進入 `Android Recovery 模式`。
+3. 接上 USB 線，即可透過 `adb shell` 重新掛載系統磁區並修正錯誤檔案。
 
 ---
 

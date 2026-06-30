@@ -7,11 +7,18 @@
 ## 📸 改裝成果與硬體外觀
 
 ### 1. 實體外觀與硬體拆解
-本改裝基於主流的 RK3066 機型（外觀與內部 PCB 電路板配置如下）：
+本改裝基於主流的 RK3066 機型，其硬體外觀與內部 PCB 電路板配置如下：
 
 <p align="center">
-  <img src="images/box_unboxing.jpg" width="45%" alt="電視盒外觀與遙控器" />
-  <img src="images/box_pcb.jpg" width="45%" alt="電視盒主板拆解" />
+  <figure align="center">
+    <img src="images/box_unboxing.jpg" width="60%" alt="電視盒外觀與遙控器" />
+    <figcaption>圖一：WOBO 電視盒外觀與專屬遙控器</figcaption>
+  </figure>
+  <br />
+  <figure align="center">
+    <img src="images/box_pcb.jpg" width="60%" alt="電視盒主板拆解" />
+    <figcaption>圖二：電視盒內部 PCB 主板拆解與元件布局（2013-04-17 版本）</figcaption>
+  </figure>
 </p>
 
 ### 2. 原始系統規格資訊
